@@ -1,0 +1,35 @@
+﻿@model AllaouFinalPro.Models.Course
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Course</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+
+
+<div class="card">
+    <div class="card-header">
+        <h2>@Model.CourseName</h2>
+    </div>
+    <div class="card-body">
+        Description is : @Model.CourseDesc  <br />
+        Price is : <span class="badge badge-primary">@Model.Price</span> <br />
+        Date is : @Model.StartDate.ToShortDateString()
+        Time is : @Model.StartTime
+        Instructor: @Model.InstructorId
+    </div>
+    <div class="card-img">
+        <img src="~/Uploads/Courses/@Model.CourseImg" />
+    </div>
+    <div class="card-footer">
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="CId" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index" class="btn btn-primary">Back to list</a>
+        </form>
+    </div>
+</div>
+   
+

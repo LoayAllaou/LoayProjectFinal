@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Courses</h1>
+
+<a asp-action="Create" class="btn btn-success">Create New Course</a>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.CourseName)</th>
+        <th>@Html.DisplayNameFor(m => m.StartDate)</th>
+        <th>@Html.DisplayNameFor(m => m.CourseImg)</th>
+        <th>Opterations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CourseName</td>
+            <td>@item.StartDate.ToShortDateString()</td>
+            <td><img src="~/Uploads/Courses/@item.CourseImg" style=" width: 100px; height: 100px;" /> </td>
+            <td>
+
+                <a asp-action="Edit" asp-route-id="@item.CId" class="btn btn-primary" asp-controller="Course">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.CId" class="btn btn-danger" asp-controller="Course">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.CId" class="btn btn-info" asp-controller="Course">Details</a>
+            </td>
+        </tr>
+
+    }
+</table>

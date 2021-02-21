@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!-- Courses -->
+<section id="aa-latest-property">
+    <div class="container">
+        <div class="aa-latest-property-area">
+            <div class="aa-title">
+                <h2>Latest Courses</h2>
+                <span></span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+            </div>
+            <div class="aa-latest-properties-content">
+                @await Component.InvokeAsync("Course")
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Courses -->
+<!-- Our Instructor Section-->
+<section id="aa-agents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-agents-area">
+                    <div class="aa-title">
+                        <h2>Our Instructors</h2>
+                        <span></span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+                    </div>
+                    <!-- agents content -->
+                    <div class="aa-agents-content">
+                        @await Component.InvokeAsync("Instructor")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Our Instructor Section-->

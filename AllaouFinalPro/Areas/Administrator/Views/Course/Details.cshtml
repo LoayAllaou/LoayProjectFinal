@@ -1,0 +1,29 @@
+﻿@model AllaouFinalPro.Models.Course
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Course Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h2>@Model.CourseName</h2>
+    </div>
+    <div class="card-body">
+        Description is : @Model.CourseDesc  <br />
+        Price is : <span class="badge badge-primary">@Model.Price</span> <br />
+        Date is : @Model.StartDate.ToShortDateString()
+        Time is : @Model.StartTime
+        Instructor: @Model.InstructorId
+    </div>
+    <div class="card-img">
+        <img src="~/Uploads/Courses/@Model.CourseImg"/>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.CId" class="btn btn-info">Edit</a>
+        <a asp-action="Index" class="btn btn-primary">Back to list</a>
+    </div>
+</div>
+
+
