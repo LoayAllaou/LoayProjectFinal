@@ -98,8 +98,8 @@ namespace AllaouFinalPro.Areas.Administrator.Controllers
             {
                 if (course.CourseImg == null)
                 {
-                 //   string cID = course.CId.ToString();
-                    var C = _context.Courses.Find(course.CId);
+                    string cID = course.CId.ToString();
+                    var C = _context.Courses.Find(cID);
                     course.CourseImg = C.CourseImg;
                 }
                 else
